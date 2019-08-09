@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+a.popup_link:hover {
+    color: red;
+}
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 800px;
+}
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+    text-align:center;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+<div class='heading'>
+<h1>测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2019-07-12 10:20:34</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:11.985078</p>
+<p class='attribute'><strong>Status:</strong> Pass 5</p>
+
+<p class='description'>测试说明</p>
+</div>
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td colspan='2'>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>paramunittest.testUserLogin_0</td>
+    <td>login</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td colspan='2' class='none'><div class='testcase'>testLogin</div></td>
+    <td colspan='7' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: login------------测试开始------------------
+http://sp.yologoer.com /auth/_login {'username': 'zwx', 'password': '123456'}
+&lt;RequestsCookieJar[&lt;Cookie .ASPXAUTH=98BD98F85F0AB3B0F063EFE50803BD3AE71853DF0116AE6CC323E5FF4C89F01FC237D247640CDAC0C7C2B9717AD9A5E0CB009F961824858FE0C077E9A64C436A1205EADC2F8E8862DDC9F330DA98425B2B6D7E7E9730E853F8FEE005C4FA5DD6B192D2140A09807429D38E5CAF1ABF7C78EF682D3C85488329E1C1CD6461E9405DF8CB26E684AA2797B5814A6EDF7984FD6A36E6297BF083AE6D01723B2D3C45 for sp.yologoer.com/&gt;]&gt;
+fanhuizhi: {
+  "Code": "0000",
+  "IsSuccess": true,
+  "Message": "登录成功"
+}
+zhuagtaima 0000
+login------------测试结束------------------
+
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>paramunittest.testUserLogin_1</td>
+    <td>login_pwderror</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td colspan='2' class='none'><div class='testcase'>testLogin</div></td>
+    <td colspan='7' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: login_pwderror------------测试开始------------------
+http://sp.yologoer.com /auth/_login {'username': 'zwx', 'password': '1234561111'}
+&lt;RequestsCookieJar[&lt;Cookie .ASPXAUTH=1C9D125621AA9968E665FBCF97F8E7CF5B0BF41D7D0D257814DCFB21B107D0982B13B8EF0032B7A6AB1CBD70D97C743B52B955F63BA569496E1E703F2C744D7FA07AFA9E3CC77C08BB9C454C5F742E78992FE20F270FC292012EACF4BFA4AD483F0885A3F679ED29A3E6D763FCE9C64CA9B108DB27557ED773F6573ECF115ADE538F0D6BF4CB3D8719A2BD979DF0679CD13787F0575CF3E4E7DCD8821BFBB477 for sp.yologoer.com/&gt;]&gt;
+fanhuizhi: {
+  "Code": "0001",
+  "IsSuccess": false,
+  "Message": "用户名或密码错误"
+}
+zhuagtaima 0001
+login_pwderror------------测试结束------------------
+
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>paramunittest.testUserLogin_0</td>
+    <td>shagnhu</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td colspan='2' class='none'><div class='testcase'>testShanghu</div></td>
+    <td colspan='7' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: shagnhu------------测试开始------------------
+&lt;RequestsCookieJar[&lt;Cookie .ASPXAUTH=C7FC6588702B5426155059A70109E7E3EBD84CD14BEB917FFEEE5061E916FAA830E721852E5A2EC2132CD7C8713FA3E14B0327DE2B46D397FDD7F105F5BE520F92AE11610C683CFBCE57921B6A6DDB6459F3EB7FC3277F643381C711518FC0A75AB6CDDDA09AEDC1F8AC6C05175A1FC60A8751DA5F4D7437D4B8F62842B6A436CA30D03D0E1E60BEF327BC97CB488F0631861E303D20BE9C936C96A090B5C010 for sp.yologoer.com/&gt;]&gt;
+fanhuizhi: {
+  "code": 0,
+  "count": 1,
+  "data": [
+    {
+      "Address": "西湖区",
+      "City": "杭州市",
+      "CreateTime": "2019/3/25 0:00:00",
+      "HandleTel": "13526896654",
+      "Id": "645d5071-1c22-4161-a093-7566f5cca058",
+      "IsLock": 0,
+      "Linker": "集团零售负责人",
+      "Name": "集团零售",
+      "Prov": "浙江省",
+      "Remark": null
+    }
+  ],
+  "msg": ""
+}
+zhuagtaima 0
+shagnhu---------------测试结束------------
+
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>paramunittest.testT_0</td>
+    <td>gzhlogincase</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',2)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td colspan='2' class='none'><div class='testcase'>test</div></td>
+    <td colspan='7' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: ---------------- 
+&lt;RequestsCookieJar[&lt;Cookie .ASPXAUTH=268FE13B22D82B037AF22359607618297ACAADBC00D56DEEE57F64B43BFAB8242803E033C480009F653B2BF5DAFBC64CE7CC905F7883D772E905B114709311EE03F7BA5104E39EC17D74CC0578A3E4DE9A1631B3A3FF7B94A8472BCC56CA70AAD8E0969DE9A4FA91431176628E81083096D89E1CB2F2CCA9ED969F1BF07D0721E9F6B4F728A542C8ADAF5712B9E32D59D35AC5D5F490580FA04923EB7EB54D92 for sp.yologoer.com/&gt;]&gt;
+方法内：1032c07b-af53-4cb3-95a3-354addc50a44
+&lt;class 'str'&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt4.2' class='hiddenRow'>
+    <td colspan='2' class='none'><div class='testcase'>test1</div></td>
+    <td colspan='7' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.2')" >
+        pass</a>
+    <div id='div_pt4.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.2: aaaaaaaaaaa 1032c07b-af53-4cb3-95a3-354addc50a44
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td colspan='2'>Total</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+</body>
+</html>
